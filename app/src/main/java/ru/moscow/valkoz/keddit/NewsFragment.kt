@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.news_fragment.*
+import ru.moscow.valkoz.keddit.commoms.RedditNewsItem
+import ru.moscow.valkoz.keddit.commoms.extensions.inflate
 import ru.moscow.valkoz.keddit.features.news.adapter.NewsAdapter
 
 class NewsFragment : Fragment() {
@@ -23,6 +25,21 @@ class NewsFragment : Fragment() {
         news_list.layoutManager = LinearLayoutManager(context)
 
         initAdapter()
+
+        if (savedInstanceState == null) {
+            val news = mutableListOf<RedditNewsItem>()
+            for (i in 1..10) {
+                news.add(RedditNewsItem(
+                        "author$i",
+                        "Title $i",
+                        i,
+                        1457207701L - i * 200,
+                        "https://picsum.photos/200/200?image=$i",
+                        "url"
+                ))
+            }
+            (news_list.adapter as NewsAdapter).addNews(news)
+        }
     }
 
     private fun initAdapter() {

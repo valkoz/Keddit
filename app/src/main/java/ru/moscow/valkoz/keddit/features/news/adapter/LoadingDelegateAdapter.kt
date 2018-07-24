@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import ru.moscow.valkoz.keddit.R
 import ru.moscow.valkoz.keddit.commoms.adapter.ViewType
 import ru.moscow.valkoz.keddit.commoms.adapter.ViewTypeDelegateAdapter
-import ru.moscow.valkoz.keddit.inflate
+import ru.moscow.valkoz.keddit.commoms.extensions.inflate
 
 class LoadingDelegateAdapter : ViewTypeDelegateAdapter {
 
