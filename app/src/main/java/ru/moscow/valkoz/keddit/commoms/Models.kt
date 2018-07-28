@@ -3,6 +3,11 @@ package ru.moscow.valkoz.keddit.commoms
 import ru.moscow.valkoz.keddit.commoms.adapter.AdapterConstants
 import ru.moscow.valkoz.keddit.commoms.adapter.ViewType
 
+data class RedditNews(
+        val after: String,
+        val before: String,
+        val news: List<RedditNewsItem>)
+
 data class RedditNewsItem(
         val author: String,
         val title: String,
