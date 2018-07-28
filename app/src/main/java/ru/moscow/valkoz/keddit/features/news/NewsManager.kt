@@ -1,12 +1,13 @@
 package ru.moscow.valkoz.keddit.features.news
 
-import ru.moscow.valkoz.keddit.api.RestAPI
+import ru.moscow.valkoz.keddit.api.NewsAPI
+import ru.moscow.valkoz.keddit.api.NewsRestAPI
 import ru.moscow.valkoz.keddit.commoms.RedditNewsItem
 import rx.Observable
 
 import ru.moscow.valkoz.keddit.commoms.RedditNews
 
-class NewsManager(private val api: RestAPI = RestAPI()) {
+class NewsManager(private val api: NewsAPI = NewsRestAPI()) {
 
     fun getNews(after: String, limit: String = "10"): Observable<RedditNews> {
         return Observable.create {
